@@ -1,6 +1,10 @@
 import pygame
 import sys
 
+import stateCombat
+import stateMenu
+import stateOverworld
+
 # ゲームの初期化
 pygame.init()
 
@@ -40,6 +44,8 @@ while running:
                 current_state = STATE_COMBAT
             elif event.key == pygame.K_o:
                 current_state = STATE_OVERWORLD
+            elif event.key == pygame.K_1:
+                stateCombat.attack()
 
     screen.fill(WHITE)
 
