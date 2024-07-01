@@ -6,7 +6,7 @@
 
 - [可読性について](markdown/readability.md)
 
-- [](markdown/)
+- [開発における基本方針](markdown/policy.md)
 
 ## ファイル構造
 
