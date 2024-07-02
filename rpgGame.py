@@ -78,6 +78,22 @@ class Character:
         else:
             self.rect = old_rect
 
+# NPCのクラス
+class NPC:
+    def __init__(self, image, position, dialog):
+        self.sheet = pygame.image.load(image).convert_alpha()
+        self.rect = Rect(0, 0, CHARACTER_SIZE[0], CHARACTER_SIZE[1])
+        self.rect.topleft = position
+        self.image = self.sheet.subsurface(Rect(0, 0, CHARACTER_SIZE[0], CHARACTER_SIZE[1]))
+        self.dialog = dialog
+
+    def draw(self, screen):
+        screen.blit(self.image, self.rect.topleft)
+
+    def check_collision(self, player_rect):
+        return self.rect.colliderect(player_rect)
+
+
 # 画像の読み込み関数
 def load_img(filename, colorkey=None):
     img = pygame.image.load(filename)
@@ -106,13 +122,19 @@ def main():
     # キャラクターを作成
     character = Character("character.png", (SCR_RECT.width / 2, SCR_RECT.height / 2))
 
+    # NPCを作成
+    npc = NPC("npc.png", (200, 200), "Hello, adventurer! Welcome to our village.")
+
+
     # ゲームの状態
     STATE_OVERWORLD = "overworld"
     STATE_COMBAT = "combat"
     STATE_MENU = "menu"
+    STATE_DIALOG = "dialog"
 
     # 現在のゲーム状態
     current_state = STATE_OVERWORLD
+
 
     # ゲームループ
     while True:
@@ -126,6 +148,10 @@ def main():
         elif current_state == STATE_MENU:
             screen.fill(WHITE)
             text = font.render("Menu State", True, BLACK)
+            screen.blit(text, (SCR_RECT.width // 2 - text.get_width() // 2, SCR_RECT.height // 2 - text.get_height() // 2))
+        elif current_state == STATE_DIALOG:
+            screen.fill(WHITE)
+            text = font.render(npc.dialog, True, BLACK)
             screen.blit(text, (SCR_RECT.width // 2 - text.get_width() // 2, SCR_RECT.height // 2 - text.get_height() // 2))
 
         pygame.display.update()
@@ -146,6 +172,8 @@ def main():
                     current_state = STATE_COMBAT
                 if event.key == K_m:
                     current_state = STATE_MENU
+                if event.key == K_RETURN and current_state == STATE_DIALOG:
+                    current_state = STATE_OVERWORLD  # Enterキーで会話終了
             # 終了用のイベント処理
             if event.type == QUIT:          # 閉じるボタンが押されたとき
                 pygame.quit()
@@ -157,19 +185,24 @@ def main():
 
         # WASDキーでキャラクター移動
         if pressed_key[K_a]:
-            character.move(-1, 0, map)
+            character.move(-2, 0, map)
             direction = 1
         if pressed_key[K_d]:
-            character.move(1, 0, map)
+            character.move(2, 0, map)
             direction = 2
         if pressed_key[K_w]:
-            character.move(0, -1, map)
+            character.move(0, -2, map)
             direction = 3
         if pressed_key[K_s]:
-            character.move(0, 1, map)
+            character.move(0, 2, map)
             direction = 0.00001 # direction = 0だとスプライトの分割がうまくいかないので応急処置
 
         character.update(direction)
+
+        # NPCとの接触をチェック
+        if current_state == STATE_OVERWORLD and npc.check_collision(character.rect):
+            current_state = STATE_DIALOG
+
 
 if __name__ == "__main__":
     main()
