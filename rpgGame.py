@@ -46,8 +46,8 @@ class Map:
         self.msize = 32  # 1マスの大きさ[px]
 
         # マップの画像をロード
-        self.imgs[0] = load_img("assets/grass.png")  # 草地
-        self.imgs[1] = load_img("assets/water.png")  # 水
+        self.imgs[0] = load_img("assets/images/grass.png")  # 草地
+        self.imgs[1] = load_img("assets/images/water.png")  # 水
     
     def draw(self, screen):
         for i in range(self.row):
@@ -135,10 +135,10 @@ def main():
     map = Map()
 
     # キャラクターを作成
-    character = Character("assets/character.png", (SCR_RECT.width / 2, SCR_RECT.height / 2))
+    character = Character("assets/images/character.png", (SCR_RECT.width / 2, SCR_RECT.height / 2))
 
     # NPCを作成
-    npc = NPC("assets/npc.png", (200, 300), ["Hello there!", "Nice to meet you!", "Goodbye!"])
+    npc = NPC("assets/images/npc.png", (200, 300), ["Hello there!", "Nice to meet you!", "Goodbye!"])
 
 
     # ゲームの状態
