@@ -22,7 +22,9 @@ def max(lis):
 
 ### 参考
 
-- なぜ、ローマ字を使ったプログラムは読みづらいのか？ - 日本語が満足に話せないSEのブログ : https://eg0323.hatenadiary.org/entry/20070721/p1
+- [なぜ、ローマ字を使ったプログラムは読みづらいのか？ - 日本語が満足に話せないSEのブログ](https://eg0323.hatenadiary.org/entry/20070721/p1)
+
+- [プログラミングでよく使う英単語のまとめ【随時更新】- Qiita](https://qiita.com/Ted-HM/items/7dde25dcffae4cdc7923) (2024/07/10 追加)
 
 ## 命名規則 (Python)
 
@@ -58,13 +60,13 @@ def max(lis):
 
 #### 参考
 
-- https://wa3.i-3-i.info/word1180.html
+- [スネークケースとは｜「分かりそう」で「分からない」でも「分かった」気になれるIT用語辞典](https://wa3.i-3-i.info/word1180.html)
 
-- https://wa3.i-3-i.info/word1179.html
+- [キャメルケースとは｜「分かりそう」で「分からない」でも「分かった」気になれるIT用語辞典](https://wa3.i-3-i.info/word1179.html)
 
     ( ↑ このサイトは初学者向けに用語解説をしているので、特に初めて触れる概念などは非常に参考になるのでおススメです)
 
-- https://zenn.dev/collabostyle/articles/96b62ea1535a58
+- [〇〇ケースの表記法って一瞬どれってなるよね対策 - Zenn](https://zenn.dev/collabostyle/articles/96b62ea1535a58)
 
 ## その他 命名にて気を付けること
 
