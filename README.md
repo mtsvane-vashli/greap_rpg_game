@@ -8,6 +8,19 @@
 
 - [開発における基本方針](markdown/policy.md) (2024/07/10 更新)
 
+## ブランチ
+
+`*<branch>*` はこのブランチ
+
+```
+------- *main*
+    |--- sample/rpg-map
+```
+
+`main`: ここに完成品を作っていく
+
+`sample/rpg-map`: @mtsvane-vashli に仮に作ってもらったやつを残しておくためのブランチ
+
 ## ファイル構造
 
 ## Git, GitHub の使い方
