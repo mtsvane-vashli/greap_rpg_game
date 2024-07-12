@@ -13,7 +13,8 @@ COL = 10
 map = [[" " for i in range(COL)] for i in range(ROW)]
 
 
-with open("C:/Users/subsu/Documents/GLEAP/hackathon_2024_team_f/greap_rpg_game/practice/map.txt") as file :
+# TODO: Use a relative path instead
+with open("C:/Users/subsu/Documents/GLEAP/hackathon/greap_rpg_game/practice/map.txt") as file :
     
     # print(file.read())  # After reading, the cursor remain at end position.
     print()
