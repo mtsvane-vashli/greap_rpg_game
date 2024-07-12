@@ -126,6 +126,7 @@ def load_img(filename, colorkey=None):
 def main():
     pygame.init()
     pygame.display.set_caption("2D RPG Game")
+    clock = pygame.time.Clock()  # 
 
     # フォントの設定
     font = pygame.font.Font(None, 36)
@@ -169,12 +170,11 @@ def main():
                 screen.blit(text, (SCR_RECT.width // 2 - text.get_width() // 2, SCR_RECT.height // 2 - text.get_height() // 2 + i * 40))
         
         pygame.display.update()
-        pygame.time.wait(30)  # 更新時間間隔
 
         # キャラクターの向きの初期設定
         direction = None
 
-        # 今押されてるキーを取得
+        # 今押されてる(長押し)キーを取得
         pressed_key = pygame.key.get_pressed()
 
         # イベント処理
@@ -182,7 +182,7 @@ def main():
             if event.type == QUIT:  # 閉じるボタンが押されたとき
                 pygame.quit()
                 sys.exit()
-            if event.type == KEYDOWN:  # キーを押したとき
+            if event.type == KEYDOWN:  # キーを押した(発火タイミング)とき
                 if event.key == K_o:
                     current_state = STATE_OVERWORLD
                 elif event.key == K_c:
@@ -213,6 +213,8 @@ def main():
             direction = 0  # 方向の設定
 
         character.update(direction)
+
+        clock.tick(60)
 
 if __name__ == "__main__":
     main()
