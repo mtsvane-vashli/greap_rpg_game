@@ -26,9 +26,9 @@ def max(lis):
 
 - [プログラミングでよく使う英単語のまとめ【随時更新】- Qiita](https://qiita.com/Ted-HM/items/7dde25dcffae4cdc7923) (2024/07/10 追加)
 
-## 命名規則 (Python) (2024/07/16 更新)
+## 命名規則 (Python) (2024/07/18 更新)
 
-以下は Python での命名規則である。より読みやすくするためでない限りは、絶対にこの規則に従うこと。
+以下は Python での命名規則に基づく。より読みやすくするためでない限りは、この規則に従うこと。なお、一部は今回の開発に限って変更している。
 
 | 種類 | ルール | 例 |
 |:-----|:------|:---|
@@ -37,12 +37,13 @@ def max(lis):
 | クラス | 最初大文字 + 大文字区切り | `MyFavoriteClass` |
 | 例外 | 最初大文字 + 大文字区切り | `MyFuckingError` |
 | 型変数 | 最初大文字 + 大文字区切り | `MyFavoriteType` |
+| インスタンス (今回独自に定める) | 最初小文字 + 大文字区切り | `myFavoriteClass` |
 | メソッド | 全小文字 + アンダースコア区切り | `my_favorite_method` |
 | 関数 | 全小文字 + アンダースコア区切り | `my_favorite_function` |
-| 変数, インスタンス | 全小文字 + アンダースコア区切り | `my_favorite_instance` |
+| 変数 | 全小文字 + アンダースコア区切り | `my_favorite_instance` |
 | 定数 | 全大文字 + アンダースコア区切り | `MY_FAVORITE_CONST` |
 
-(引用: https://qiita.com/naomi7325/items/4eb1d2a40277361e898b)
+(引用: https://qiita.com/naomi7325/items/4eb1d2a40277361e898b \*ただし一部変更している)
 
 注: 上記のように定義した定数は、実際には代入が可能であることに注意。
 
