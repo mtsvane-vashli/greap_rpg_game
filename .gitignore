@@ -1,5 +1,10 @@
 build/
 dist/
 *.spec
+<<<<<<< HEAD
 free.py
 **/__pycache__/**
+=======
+**/__pycache__/**
+/.vscode
+>>>>>>> aa1766848193de3d8058fd7f15e34514771bf272
