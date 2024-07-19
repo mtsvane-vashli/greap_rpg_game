@@ -37,9 +37,10 @@ def max(lis):
 | クラス | 最初大文字 + 大文字区切り | `MyFavoriteClass` |
 | 例外 | 最初大文字 + 大文字区切り | `MyFuckingError` |
 | 型変数 | 最初大文字 + 大文字区切り | `MyFavoriteType` |
+| インスタンス (2024/07/18 追加) | 最初小文字 + 大文字区切り | `myFavoriteClass` |
 | メソッド | 全小文字 + アンダースコア区切り | `my_favorite_method` |
 | 関数 | 全小文字 + アンダースコア区切り | `my_favorite_function` |
-| 変数, インスタンス | 全小文字 + アンダースコア区切り | `my_favorite_instance` |
+| 変数 | 全小文字 + アンダースコア区切り | `my_favorite_instance` |
 | 定数 | 全大文字 + アンダースコア区切り | `MY_FAVORITE_CONST` |
 
 (引用: https://qiita.com/naomi7325/items/4eb1d2a40277361e898b)

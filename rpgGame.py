@@ -4,7 +4,7 @@ from pygame.locals import *
 import sys
 
 # 画面サイズの設定
-SCR_RECT = Rect(0, 0, 1280, 740)
+SCR_RECT = Rect(0, 0, 1280, 736)
 
 # キャラクターの1フレームのサイズ (幅, 高さ)
 CHARACTER_SIZE = (31, 32)
@@ -38,7 +38,7 @@ class Map:
            [1,1,0,0,1,0,1,1,0,0,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
            [1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
            [1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-           [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]]
+           [1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]]
     
     def __init__(self):
         self.row, self.col = len(self.map), len(self.map[0])  # マップの行数,列数を取得
@@ -126,7 +126,7 @@ def load_img(filename, colorkey=None):
 def main():
     pygame.init()
     pygame.display.set_caption("2D RPG Game")
-    clock = pygame.time.Clock()  # 
+    clock = pygame.time.Clock()  # for fps setting
 
     # フォントの設定
     font = pygame.font.Font(None, 36)
@@ -214,7 +214,7 @@ def main():
 
         character.update(direction)
 
-        clock.tick(60)
+        clock.tick(30)  # set fps
 
 if __name__ == "__main__":
     main()
