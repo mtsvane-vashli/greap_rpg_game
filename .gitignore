@@ -1,4 +1,5 @@
 build/
 dist/
 *.spec
+free.py
 **/__pycache__/**
