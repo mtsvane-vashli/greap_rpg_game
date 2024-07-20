@@ -43,10 +43,12 @@ Docstring は markdown で記述できるみたい。(びっくり)
     - オブジェクトは個々にフラグが必要なのでこれはシングルトンにはしない
 - map の上下左右の単純な遷移だけじゃなく、map 上の特定のポイントから遷移(ワープ)するのも考える
 
-- 変更事項
+- 変更事項?
   - `MapChipEnum` -> `ObjectEnum` / `ObjectTypeEnum` (has `FLAGGED`, `COLLISION`, `WARP_POINT`)
   - `MapChips`(copied) -> `FlaggedObjects` これはオブジェクトの画像を保持 シングルトン
   - __ -> `FlaggedObject` これは個々のオブジェクト、
   - `Map` -> `Map`(個々のマップ: `flaggedObject` の配置 & 1枚のマップの画像の描画 & 当たり判定(レイヤー)を保持)
     - 当たり判定にワープポイントを含みたい
       - __ -> `WarpPointEnum`
+
+- 高さ1.5の始まりの町はmainのfield内でwarp使って無理やりやろう

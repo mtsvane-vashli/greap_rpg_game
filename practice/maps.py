@@ -10,7 +10,7 @@ DIR_FIELD_TEXTS = "mapdata"
 DIR_MAP_TEXTS = "mapdata"
 
 FIELD_DATA_SPLITTER = ','  # Elements(map) of field data must be splitted by this.
-# Elements(mapChip) of map data must be one character.
+# Elements(mapChip) of map(not sheet) data must be one character.
 
 
 class MapChipEnum(Enum) :
