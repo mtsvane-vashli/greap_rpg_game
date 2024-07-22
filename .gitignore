@@ -1,5 +1,3 @@
-build/
-dist/
 *.spec
 <<<<<<< HEAD
 free.py
