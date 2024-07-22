@@ -70,7 +70,7 @@
  [],
  False,
  False,
- 1721624057,
+ 1721625746,
  [('run.exe',
    'C:\\Users\\kousu\\pythonRoom\\pygame\\Lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit-intel\\run.exe',
    'EXECUTABLE')],
